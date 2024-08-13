@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
+	<script src="{{ url_for('static', filename='scripts/1-hbnb.js') }}?cache_id={{ cache_id }}" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}?cache_id={{ cache_id }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}?cache_id={{ cache_id }}">
+	<title>HBNB</title>
+</head>
+<body>
+	<div class="container">
+		<div class="states">
+		</div>
+		<div class="amenities">
+			<h4>Amenities</h4>
+			<ul>
+				{% for amenity in amenities %}
+				<li>
+					<input type="checkbox" data-id="{{ amenity.id }}" data-name="{{ amenity.name }}">
+					{{ amenity.name }}
+				</li>
+				{% endfor %}
+			</ul>
+		</div>
+		<div class="places">
+		</div>
+	</div>
+</body>
+</html>
